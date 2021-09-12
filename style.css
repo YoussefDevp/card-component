@@ -5,26 +5,33 @@
   box-sizing: border-box;
 }
 
-body {
+.container {
+  height: 100vh;
+  width: 100%;
   background: #ffffff;
   font-family: 'Lexend Deca', sans-serif;
   font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 container {
   display: flex;
-  border-radius: 15px;
 }
 
 container .card {
-  height: 100%;
   width: 250px;
   padding: 2.5rem;
   color: #f2f2f2;
+}
+
+container .card:first-child {
+  border-radius: 10px 0px 0px 10px;
+}
+
+container .card:last-child {
+  border-radius: 0px 10px 10px 0px;
 }
 
 container .card h2 {
@@ -71,4 +78,29 @@ container .card a {
 
 .card:nth-of-type(3) {
   background: #004241;
+}
+
+.btn:hover {
+  transition: all .3s ease-in-out;
+  filter: brightness(120%);
+}
+
+@media only screen and (max-width: 780px) {
+  .container {
+    height: 100%;
+    margin: 2rem 0rem;
+  }
+  .container container {
+    flex-direction: column;
+  }
+  .container container .card {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .container container .card:first-child {
+    border-radius: 10px 10px 0px 0px;
+  }
+  .container container .card:last-child {
+    border-radius: 0px 0px 10px 10px;
+  }
 }
